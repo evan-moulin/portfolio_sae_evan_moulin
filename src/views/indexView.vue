@@ -21,7 +21,7 @@ function switchText() {
     textElement.textContent = texts[index];
     index = (index + 1) % texts.length;
     textElement.classList.remove("animate-fadeInOut");
-  }, 1000); // Durée de l'animation en millisecondes
+  }, 1000); // Durée de l'animation
 }
 
 // Appel de la fonction switchText toutes les 3 secondes

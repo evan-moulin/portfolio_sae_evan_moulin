@@ -239,111 +239,203 @@ const submitForm = async () => {
     </div>
   </section>
 
-  <h1 id="portfolio">Mes projects</h1>
-
-  <div class="container mx-auto py-8 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-8">Projets</h2>
+  <div id="portfolio" class="container mx-auto py-8 bg-gray-100">
+    <h2
+      class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4"
+    >
+      Projets
+    </h2>
 
     <div class="flex flex-wrap justify-center">
       <!-- Card 1 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
         <img
           class="w-full"
-          src="../components/icons/first_sml.png"
+          src="../components/icons/projet_sml.png"
           alt="Project 1"
         />
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Projet 1</div>
-          <p class="text-gray-700 text-base">Description du projet 1.</p>
+          <div class="font-bold text-xl mb-2">Share my loc</div>
+          <p class="text-gray-700 text-base">
+            Share my Loc est une application web révolutionnaire qui vous permet
+            de retrouver facilement amis.
+          </p>
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
             >#Web</span
           >
         </div>
+        <RouterLink
+          class="absolute bottom-0 right-0 mb-4 mr-4 flex items-center text-blue-500 hover:text-slate-900"
+          to="sml"
+        >
+          <span>En savoir plus</span>
+        </RouterLink>
       </div>
 
       <!-- Card 2 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
         <img
           class="w-full"
-          src="../components/icons/first_sml.png"
+          src="../components/icons/projet_cinephoria.png"
           alt="Project 2"
         />
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Projet 2</div>
-          <p class="text-gray-700 text-base">Description du projet 2.</p>
+          <div class="font-bold text-xl mb-2">Cinéphoria</div>
+          <p class="text-gray-700 text-base">
+            Cinéphoria est la plateforme de streaming idéal pour tout les
+            amateurs de film et de série.
+          </p>
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
             >#Mobile</span
           >
         </div>
+        <RouterLink
+          class="absolute bottom-0 right-0 mb-4 mr-4 flex items-center text-blue-500 hover:text-slate-900"
+          to="sml"
+        >
+          <span>En savoir plus</span>
+        </RouterLink>
       </div>
 
       <!-- Card 3 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
         <img
           class="w-full"
-          src="../components/icons/first_sml.png"
+          src="../components/icons/projet_handball.png"
           alt="Project 3"
         />
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Projet 3</div>
-          <p class="text-gray-700 text-base">Description du projet 3.</p>
+          <div class="font-bold text-xl mb-2">Handball league</div>
+          <p class="text-gray-700 text-base">
+            Handball-League est un site qui recense les équipes et joueurs du
+            championnat de France de handball.
+          </p>
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
             >#Design</span
           >
         </div>
+
+        <div class="absolute bottom-0 right-0 mb-4 mr-4">
+          <RouterLink
+            class="text-blue-500 flex items-center hover:text-slate-900"
+            to="sml"
+          >
+            <span>En savoir plus</span>
+          </RouterLink>
+        </div>
       </div>
 
       <!-- Card 4 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
         <img
           class="w-full"
-          src="../components/icons/first_sml.png"
+          src="../components/icons/projet_pinot.png"
           alt="Project 4"
         />
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Projet 4</div>
-          <p class="text-gray-700 text-base">Description du projet 4.</p>
+          <div class="font-bold text-xl mb-2">Pinot</div>
+          <p class="text-gray-700 text-base">
+            Pinot est un site de montre de Luxe dans lequel l'utilisateur peut
+            personnaliser sa montre.
+          </p>
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
             >#UI/UX</span
           >
         </div>
+        <div class="absolute bottom-0 right-0 mb-4 mr-4">
+          <RouterLink
+            to="sml"
+            class="text-blue-500 flex items-center hover:text-slate-900"
+          >
+            <span>En savoir plus</span>
+          </RouterLink>
+        </div>
       </div>
 
       <!-- Card 5 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
         <img
           class="w-full"
-          src="../components/icons/first_sml.png"
+          src="../components/icons/projet_canopee.png"
           alt="Project 5"
         />
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Projet 5</div>
-          <p class="text-gray-700 text-base">Description du projet 5.</p>
+          <div class="font-bold text-xl mb-2">La Canopée</div>
+          <p class="text-gray-700 text-base">
+            La Canopée est un chalet de montagne qui souhaitait avoir un logo en
+            rapport avec ses valeurs.
+          </p>
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
             >#Marketing</span
           >
         </div>
+        <div class="absolute bottom-0 right-0 mb-4 mr-4">
+          <RouterLink
+            to="sml"
+            class="text-blue-500 flex items-center hover:text-slate-900"
+          >
+            <span>En savoir plus</span>
+          </RouterLink>
+        </div>
       </div>
 
       <!-- Card 6 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
         <img
           class="w-full"
-          src="../components/icons/first_sml.png"
+          src="../components/icons/projet_edenio.png"
           alt="Project 6"
         />
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Projet 6</div>
-          <p class="text-gray-700 text-base">Description du projet 6.</p>
+          <div class="font-bold text-xl mb-2">Edenio</div>
+          <p class="text-gray-700 text-base">
+            Edenio est une application web qui vise à créer des recettes et des
+            règimes alimentaires.
+          </p>
           <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
             >#E-commerce</span
           >
+        </div>
+        <div class="absolute bottom-0 right-0 mb-4 mr-4">
+          <RouterLink
+            to="sml"
+            class="text-blue-500 flex items-center hover:text-slate-900"
+          >
+            <span>En savoir plus</span>
+          </RouterLink>
+        </div>
+      </div>
+
+      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
+        <img
+          class="w-full"
+          src="../components/icons/projet_benevolaction.png"
+          alt="Project 6"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Bénévolaction</div>
+          <p class="text-gray-700 text-base">
+            Benevolaction est un site qui a pour but de trouver une association
+            pour chaque bénévole.
+          </p>
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
+            >#E-commerce</span
+          >
+        </div>
+        <div class="absolute bottom-0 right-0 mb-4 mr-4">
+          <RouterLink
+            to="sml"
+            class="text-blue-500 flex items-center hover:text-slate-900"
+          >
+            <span>En savoir plus</span>
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -575,7 +667,10 @@ const submitForm = async () => {
     </div>
   </div>
 
-  <div class="max-w-md mx-auto mt-8 rounded-lg overflow-hidden shadow-lg">
+  <div
+    id="contact"
+    class="max-w-md mx-auto mt-8 rounded-lg overflow-hidden shadow-lg"
+  >
     <form
       @submit.prevent="submitForm"
       class="max-w-md mx-auto mt-8 p-8 rounded-lg shadow-lg"

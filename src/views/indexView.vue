@@ -26,6 +26,37 @@ function switchText() {
 
 // Appel de la fonction switchText toutes les 3 secondes
 setInterval(switchText, 3000);
+
+import { ref } from "vue";
+
+const email = ref("");
+const object = ref("");
+const message = ref("");
+
+const submitForm = async () => {
+  const formData = new FormData();
+  formData.append("email", email.value);
+  formData.append("object", object.value);
+  formData.append("message", message.value);
+
+  try {
+    const response = await fetch("envoyer.php", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      alert("Message envoyé avec succès !");
+      email.value = "";
+      object.value = "";
+      message.value = "";
+    } else {
+      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+    }
+  } catch (error) {
+    console.error("Erreur lors de l'envoi du message:", error);
+  }
+};
 </script>
 
 <template>
@@ -115,14 +146,6 @@ setInterval(switchText, 3000);
             N'hésitez pas à me contacter pour discuter de votre prochain projet
             de design!
           </p>
-          <!-- Bouton pour télécharger le CV -->
-          <a
-            href="chemin/vers/votre-cv.pdf"
-            download
-            class="inline-block bg-zinc-950 text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black hover:transition duration-300"
-          >
-            Télécharger mon CV
-          </a>
         </div>
       </div>
     </div>
@@ -217,45 +240,6 @@ setInterval(switchText, 3000);
   </section>
 
   <h1 id="portfolio">Mes projects</h1>
-
-  <div
-    class="max-w-md rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-1 hover:shadow-xl bg-white"
-  >
-    <img
-      src="../components/icons/first_sml.png"
-      alt="Placeholder Image"
-      class="w-full h-60 object-cover object-center"
-    />
-    <div class="p-6">
-      <h2 class="text-xl font-semibold text-gray-800 mb-2">Title</h2>
-      <p class="text-gray-600">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-        consectetur velit sit amet ultrices.
-      </p>
-      <a
-        href="#"
-        class="flex items-center mt-4 text-blue-500 hover:text-blue-700"
-      >
-        <span class="mr-2">En savoir plus</span>
-        <!-- Ajout de la classe mr-2 pour une marge à droite -->
-        <!-- Flèche vers la droite pour indiquer que c'est un lien -->
-        <svg
-          class="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"
-          ></path>
-        </svg>
-      </a>
-    </div>
-  </div>
 
   <div class="container mx-auto py-8 bg-white">
     <h2 class="text-3xl font-bold text-center mb-8">Projets</h2>
@@ -364,59 +348,6 @@ setInterval(switchText, 3000);
       </div>
     </div>
   </div>
-
-  <div class="flex min-h-screen w-full items-center justify-center">
-    <article
-      class="group relative aspect-video h-96 w-[36rem] cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl"
-    >
-      <img
-        class="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-500 group-hover:transition-opacity group-hover:duration-300"
-        src="../components/icons/slide1.png"
-        alt=""
-      />
-      <div
-        class="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent to-90% text-white transition-all duration-300 group-hover:bg-gradient-to-t group-hover:from-black/90 group-hover:transition-all group-hover:duration-500"
-      >
-        <h2
-          class="absolute bottom-8 left-8 m-0 font-extrabold uppercase transition-all delay-300 duration-100 ease-out group-hover:bottom-1/2 group-hover:delay-0 group-hover:duration-300"
-        >
-          title
-        </h2>
-        <p
-          class="absolute left-8 top-1/2 line-clamp-3 max-w-[80%] pt-4 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:delay-500 group-hover:duration-300"
-        >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-          nostrum nesciunt reiciendis labore vel velit blanditiis vero, amet
-          corporis porro saepe officiis officia sit sequi molestiae ab libero,
-          quo tempora repellat? Facilis doloremque, eligendi neque sed fuga
-          tempore hic magnam qui in sint maiores id, itaque totam, quis quasi!
-          Minima amet excepturi sit aliquid dolores eos quam asperiores eius
-          consectetur repudiandae pariatur nostrum laboriosam, non ullam?
-          Exercitationem ipsam illum eos architecto veniam magnam, officia
-          pariatur sit odit inventore ab natus culpa cum placeat illo voluptas
-          eum reprehenderit adipisci. Nostrum vel aperiam dolorem quo
-          exercitationem dicta aut doloremque itaque tempore similique at
-          accusantium veniam voluptate, commodi quis debitis accusamus, esse qui
-          saepe adipisci odit corporis? Ad ipsam dolores aspernatur animi unde
-          voluptas vero recusandae totam alias. Placeat quasi, perferendis ad
-          cum illo quaerat est cumque maxime incidunt natus corporis debitis et
-          nesciunt, excepturi ipsam officiis laborum voluptate perspiciatis
-          blanditiis provident ut aliquid fugit nemo illum. Similique, sequi
-          doloribus soluta suscipit eligendi quidem laudantium modi incidunt
-          dolore officia nam blanditiis numquam iusto temporibus odit unde
-          consectetur voluptatem enim asperiores rerum quam, repellat commodi
-          aliquid impedit! Voluptatibus, ex asperiores sed, laborum quibusdam
-          quae assumenda vero in minima qui est numquam modi placeat cum!
-        </p>
-        <a
-          class="absolute bottom-8 left-8 max-w-[80%] rounded-lg border px-4 py-2 uppercase opacity-0 transition-opacity ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-500 group-hover:duration-300"
-          href="/"
-          >find out more</a
-        >
-      </div>
-    </article>
-  </div>
-
   <div class="container mx-auto py-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <!-- Card 2 -->
@@ -644,7 +575,68 @@ setInterval(switchText, 3000);
     </div>
   </div>
 
-  <div id="contact"></div>
+  <div class="max-w-md mx-auto mt-8 rounded-lg overflow-hidden shadow-lg">
+    <form
+      @submit.prevent="submitForm"
+      class="max-w-md mx-auto mt-8 p-8 rounded-lg shadow-lg"
+    >
+      <div class="mb-6">
+        <label
+          for="email"
+          class="block text-sm font-semibold text-gray-700 mb-2"
+          >Adresse Email:</label
+        >
+        <input
+          type="email"
+          id="email"
+          v-model="email"
+          required
+          placeholder="Entrez votre adresse email"
+          class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
+        />
+      </div>
+
+      <div class="mb-6">
+        <label
+          for="object"
+          class="block text-sm font-semibold text-gray-700 mb-2"
+          >Objet:</label
+        >
+        <input
+          type="text"
+          id="object"
+          v-model="object"
+          required
+          placeholder="Sujet de votre message"
+          class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
+        />
+      </div>
+
+      <div class="mb-6">
+        <label
+          for="message"
+          class="block text-sm font-semibold text-gray-700 mb-2"
+          >Message:</label
+        >
+        <textarea
+          id="message"
+          v-model="message"
+          required
+          placeholder="Votre message ici"
+          class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
+        ></textarea>
+      </div>
+
+      <div class="flex justify-center">
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Envoyer
+        </button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <style>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CardProjet from "@/components/CardProjet.vue";
+import Competenceperso from "@/components/Competenceperso.vue";
 const cards = [
   {
     title: "Share my loc",
@@ -59,6 +60,33 @@ const cards = [
   },
 ];
 
+const Competence = [
+  {
+    title: "Développement Web",
+    description:
+      "Lors de mes études, j'ai appris à maîtriser les langages HTML, CSS ainsi que Tailwind. J'ai également appris à utiliser des frameworks comme Vue.js.",
+    image: "ordi.svg",
+    bgColor: "bg-teal-400",
+    iconColor: "white",
+  },
+  {
+    title: "Design",
+    description:
+      "En design, j'ai appris à maîtriser les logiciels de design tel que Figma, Illustrator et Photoshop.",
+    image: "pinceau.svg",
+    bgColor: "bg-rose-500",
+    iconColor: "white",
+  },
+  {
+    title: "Communication",
+    description:
+      "En Communication, j'ai appris la gestion de projet, ainsi que la maîtrise d'outil comme Trello ou la mise en place de Gantt.",
+    image: "communication.svg",
+    bgColor: "bg-sky-500",
+    iconColor: "white",
+  },
+];
+
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
 
@@ -66,25 +94,20 @@ const scrollToSection = (sectionId) => {
     element.scrollIntoView({ behavior: "smooth" });
   }
 };
-const texts = [
-  "Bonjour Je m'apelle Evan Moulin",
-  "Je suis Web Designer",
-  "Bienvenue sur mon portfolio",
-]; // Liste des textes à afficher
-let index = 0; // Index pour parcourir les textes
+const texts = ["Je suis Web Designer", "Bienvenue sur mon portfolio"];
 
-// Fonction pour changer le texte avec une animation
+let index = 0;
+
 function switchText() {
   const textElement = document.getElementById("textSwitcher");
-  textElement.classList.add("animate-fadeInOut");
+  textElement.classList.add("fade-out");
   setTimeout(() => {
     textElement.textContent = texts[index];
     index = (index + 1) % texts.length;
-    textElement.classList.remove("animate-fadeInOut");
-  }, 1000); // Durée de l'animation
+    textElement.classList.remove("fade-out");
+  }, 500); // Durée de la transition
 }
 
-// Appel de la fonction switchText toutes les 3 secondes
 setInterval(switchText, 3000);
 
 import { ref } from "vue";
@@ -206,9 +229,8 @@ const submitForm = async () => {
             de design!
           </p>
           <div class="flex justify-center md:justify-start">
-            <!-- Modification de cette ligne -->
             <a
-              href="src/components/icons/CV_pro_evan_moulin.pdf"
+              href="src/components/icons/CV_EvanMoulin.pdf"
               download
               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
@@ -224,86 +246,15 @@ const submitForm = async () => {
     </h1>
     <div class="w-full pt-12 p-4">
       <div class="grid gap-14 md:grid-cols-3 md:gap-5">
-        <div class="rounded-xl bg-white p-6 text-center shadow-xl">
-          <div
-            class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-teal-400 shadow-lg shadow-teal-500/40"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 25"
-              fill="none"
-              stroke="white"
-              stroke-width="1"
-            >
-              <rect x="6" y="8" width="12" height="7" rx="1" ry="1" />
-              <line x1="8" y1="19" x2="16" y2="19" />
-              <line x1="12" y1="15" x2="12" y2="19" />
-            </svg>
-          </div>
-          <h1 class="text-darken mb-3 text-xl font-medium lg:px-14">
-            Développement Web
-          </h1>
-          <p class="px-4 text-gray-500">
-            Lors de mes études, j'ai appris à maîtriser les langages HTML, CSS
-            ainsi que Tailwind. J'ai également appris à utiliser des frameworks
-            comme Vue.js.
-          </p>
-        </div>
-        <div
-          data-aos-delay="150"
-          class="rounded-xl bg-white p-6 text-center shadow-xl"
-        >
-          <div
-            class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-rose-500 shadow-rose-500/40"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="white"
-              class="bi bi-brush"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z"
-              />
-            </svg>
-          </div>
-          <h1 class="text-darken mb-3 text-xl font-medium lg:px-14">Design</h1>
-          <p class="px-4 text-gray-500">
-            En design, j'ai appris à maîtriser les logiciels de design tel que
-            Figma, Illustrator et Photoshop.
-          </p>
-        </div>
-        <div
-          data-aos-delay="300"
-          class="rounded-xl bg-white p-6 text-center shadow-xl"
-        >
-          <div
-            class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-sky-500 shadow-sky-500/40"
-          >
-            <svg
-              viewBox="0 0 55 44"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 text-white"
-            >
-              <path
-                d="M8.25 19.25C11.2836 19.25 13.75 16.7836 13.75 13.75C13.75 10.7164 11.2836 8.25 8.25 8.25C5.21641 8.25 2.75 10.7164 2.75 13.75C2.75 16.7836 5.21641 19.25 8.25 19.25ZM46.75 19.25C49.7836 19.25 52.25 16.7836 52.25 13.75C52.25 10.7164 49.7836 8.25 46.75 8.25C43.7164 8.25 41.25 10.7164 41.25 13.75C41.25 16.7836 43.7164 19.25 46.75 19.25ZM49.5 22H44C42.4875 22 41.1211 22.6102 40.1242 23.5984C43.5875 25.4977 46.0453 28.9266 46.5781 33H52.25C53.7711 33 55 31.7711 55 30.25V27.5C55 24.4664 52.5336 22 49.5 22ZM27.5 22C32.8195 22 37.125 17.6945 37.125 12.375C37.125 7.05547 32.8195 2.75 27.5 2.75C22.1805 2.75 17.875 7.05547 17.875 12.375C17.875 17.6945 22.1805 22 27.5 22ZM34.1 24.75H33.3867C31.5992 25.6094 29.6141 26.125 27.5 26.125C25.3859 26.125 23.4094 25.6094 21.6133 24.75H20.9C15.4344 24.75 11 29.1844 11 34.65V37.125C11 39.4023 12.8477 41.25 15.125 41.25H39.875C42.1523 41.25 44 39.4023 44 37.125V34.65C44 29.1844 39.5656 24.75 34.1 24.75ZM14.8758 23.5984C13.8789 22.6102 12.5125 22 11 22H5.5C2.46641 22 0 24.4664 0 27.5V30.25C0 31.7711 1.22891 33 2.75 33H8.41328C8.95469 28.9266 11.4125 25.4977 14.8758 23.5984Z"
-                fill="white"
-              ></path>
-            </svg>
-          </div>
-          <h1
-            class="text-darken mb-3 pt-3 text-xl font-medium lg:h-14 lg:px-14"
-          >
-            Communication
-          </h1>
-          <p class="px-4 text-gray-500">
-            En Communication, j'ai appris la gestion de projet, ainsi que la
-            maîtrise d'outil comme Trello ou la mise en place de Gantt
-          </p>
-        </div>
+        <Competenceperso
+          v-for="(uneCompetence, index) in Competence"
+          :key="index"
+          :title="uneCompetence.title"
+          :description="uneCompetence.description"
+          :svg="uneCompetence.image"
+          :bgColor="uneCompetence.bgColor"
+          :iconColor="uneCompetence.iconColor"
+        />
       </div>
     </div>
   </section>
@@ -315,10 +266,9 @@ const submitForm = async () => {
       Projets
     </h2>
 
-    <div
-      class="flex flex-wrap justify-center"
-    >
-      <CardProjet v-for="(uneCard, index) in cards"
+    <div class="flex flex-wrap justify-center">
+      <CardProjet
+        v-for="(uneCard, index) in cards"
         :key="index"
         :title="uneCard.title"
         :description="uneCard.description"
@@ -423,5 +373,14 @@ const submitForm = async () => {
 
 .card-container .card:hover {
   transform: translateY(-5px);
+}
+
+#textSwitcher {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#textSwitcher.fade-out {
+  opacity: 0;
 }
 </style>

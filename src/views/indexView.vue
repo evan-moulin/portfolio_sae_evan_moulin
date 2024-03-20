@@ -1,4 +1,64 @@
 <script setup lang="ts">
+import card from "@/components/card.vue";
+const cards = [
+  {
+    title: "Share my loc",
+    description:
+      "Share my Loc est une application web révolutionnaire qui vous permet de retrouver facilement amis.",
+    image: "src/components/icons/projet_sml.png",
+    tags: "#Web",
+    link: "sml",
+  },
+  {
+    title: "Cinéphoria",
+    description:
+      "Cinéphoria est la plateforme de streaming idéal pour tout les amateurs de film et de série.",
+    image: "src/components/icons/projet_cinephoria.png",
+    tags: "#Mobile",
+    link: "cinephoria",
+  },
+  {
+    title: "Handball league",
+    description:
+      "Handball-League est un site qui recense les équipes et joueurs du championnat de France de handball.",
+    image: "src/components/icons/projet_handball.png",
+    tags: "#Design",
+    link: "handball",
+  },
+  {
+    title: "Pinot",
+    description:
+      "Pinot est un site de montre de Luxe dans lequel l'utilisateur peut personnaliser sa montre.",
+    image: "src/components/icons/projet_pinot.png",
+    tags: "#UI/UX",
+    link: "pinot",
+  },
+  {
+    title: "La Canopée",
+    description:
+      "La Canopée est un chalet de montagne qui souhaitait avoir un logo en rapport avec ses valeurs.",
+    image: "src/components/icons/projet_canopee.png",
+    tags: "#Marketing",
+    link: "canopee",
+  },
+  {
+    title: "Edenio",
+    description:
+      "Edenio est une application web qui vise à créer des recettes et des régimes alimentaires.",
+    image: "src/components/icons/projet_edenio.png",
+    tags: "#E-commerce",
+    link: "edenio",
+  },
+  {
+    title: "Bénévolaction",
+    description:
+      "Benevolaction est un site qui a pour but de trouver une association pour chaque bénévole.",
+    image: "src/components/icons/projet_benevolaction.png",
+    tags: "#E-commerce",
+    link: "benevolaction",
+  },
+];
+
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
 
@@ -122,33 +182,29 @@ const submitForm = async () => {
 
         <!-- Contenu texte sur la droite -->
         <div class="text-center md:text-left md:mx-auto">
-          <!-- Modification de cette ligne -->
-          <h1
-            class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4"
-          >
-            ABOUT
-          </h1>
-          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-            Je suis Evan Moulin, un passionné de design. Actuellement étudiant,
-            mon objectif est de créer des designs élégants, fonctionnels et
-            innovants qui captivent et inspirent.
-          </p>
-          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-            Je me spécialise actuellement dans le design graphique, et j'ai pour
-            but de devenir un designer complet pour une grande entreprise.
-          </p>
-          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-            Je m'efforce continuellement de repousser les limites de la
-            créativité et de l'innovation, tout en restant à l'écoute des
-            besoins et des aspirations de mes clients.
-          </p>
-          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-4">
-            N'hésitez pas à me contacter pour discuter de votre prochain projet
-            de design!
-          </p>
-        </div>
-      </div>
-    </div>
+  <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4">
+    ABOUT
+  </h1>
+  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
+    Je suis Evan Moulin, un passionné de design. Actuellement étudiant, mon objectif est de créer des designs élégants, fonctionnels et innovants qui captivent et inspirent.
+  </p>
+  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
+    Je me spécialise actuellement dans le design graphique, et j'ai pour but de devenir un designer complet pour une grande entreprise.
+  </p>
+  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
+    Je m'efforce continuellement de repousser les limites de la créativité et de l'innovation, tout en restant à l'écoute des besoins et des aspirations de mes clients.
+  </p>
+  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-4">
+    N'hésitez pas à me contacter pour discuter de votre prochain projet de design!
+  </p>
+  <div class="flex justify-center md:justify-start"> <!-- Modification de cette ligne -->
+    <a href="src/components/icons/CV_pro_evan_moulin.pdf" download class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      Télécharger CV
+    </a>
+  </div>
+</div>
+</div>  
+</div>
 
     <h1 class="text-xl md:text-4xl ml-8 mt-12 font-bold text-zinc-950 mb-4">
       Mes compétences
@@ -247,197 +303,15 @@ const submitForm = async () => {
     </h2>
 
     <div class="flex flex-wrap justify-center">
-      <!-- Card 1 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
-        <img
-          class="w-full"
-          src="../components/icons/projet_sml.png"
-          alt="Project 1"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Share my loc</div>
-          <p class="text-gray-700 text-base">
-            Share my Loc est une application web révolutionnaire qui vous permet
-            de retrouver facilement amis.
-          </p>
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
-            >#Web</span
-          >
-        </div>
-        <RouterLink
-          class="absolute bottom-0 right-0 mb-4 mr-4 flex items-center text-blue-500 hover:text-slate-900"
-          to="sml"
-        >
-          <span>En savoir plus</span>
-        </RouterLink>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
-        <img
-          class="w-full"
-          src="../components/icons/projet_cinephoria.png"
-          alt="Project 2"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Cinéphoria</div>
-          <p class="text-gray-700 text-base">
-            Cinéphoria est la plateforme de streaming idéal pour tout les
-            amateurs de film et de série.
-          </p>
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
-            >#Mobile</span
-          >
-        </div>
-        <RouterLink
-          class="absolute bottom-0 right-0 mb-4 mr-4 flex items-center text-blue-500 hover:text-slate-900"
-          to="sml"
-        >
-          <span>En savoir plus</span>
-        </RouterLink>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
-        <img
-          class="w-full"
-          src="../components/icons/projet_handball.png"
-          alt="Project 3"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Handball league</div>
-          <p class="text-gray-700 text-base">
-            Handball-League est un site qui recense les équipes et joueurs du
-            championnat de France de handball.
-          </p>
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
-            >#Design</span
-          >
-        </div>
-
-        <div class="absolute bottom-0 right-0 mb-4 mr-4">
-          <RouterLink
-            class="text-blue-500 flex items-center hover:text-slate-900"
-            to="sml"
-          >
-            <span>En savoir plus</span>
-          </RouterLink>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
-        <img
-          class="w-full"
-          src="../components/icons/projet_pinot.png"
-          alt="Project 4"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Pinot</div>
-          <p class="text-gray-700 text-base">
-            Pinot est un site de montre de Luxe dans lequel l'utilisateur peut
-            personnaliser sa montre.
-          </p>
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
-            >#UI/UX</span
-          >
-        </div>
-        <div class="absolute bottom-0 right-0 mb-4 mr-4">
-          <RouterLink
-            to="sml"
-            class="text-blue-500 flex items-center hover:text-slate-900"
-          >
-            <span>En savoir plus</span>
-          </RouterLink>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
-        <img
-          class="w-full"
-          src="../components/icons/projet_canopee.png"
-          alt="Project 5"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">La Canopée</div>
-          <p class="text-gray-700 text-base">
-            La Canopée est un chalet de montagne qui souhaitait avoir un logo en
-            rapport avec ses valeurs.
-          </p>
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
-            >#Marketing</span
-          >
-        </div>
-        <div class="absolute bottom-0 right-0 mb-4 mr-4">
-          <RouterLink
-            to="sml"
-            class="text-blue-500 flex items-center hover:text-slate-900"
-          >
-            <span>En savoir plus</span>
-          </RouterLink>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
-        <img
-          class="w-full"
-          src="../components/icons/projet_edenio.png"
-          alt="Project 6"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Edenio</div>
-          <p class="text-gray-700 text-base">
-            Edenio est une application web qui vise à créer des recettes et des
-            règimes alimentaires.
-          </p>
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
-            >#E-commerce</span
-          >
-        </div>
-        <div class="absolute bottom-0 right-0 mb-4 mr-4">
-          <RouterLink
-            to="sml"
-            class="text-blue-500 flex items-center hover:text-slate-900"
-          >
-            <span>En savoir plus</span>
-          </RouterLink>
-        </div>
-      </div>
-
-      <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
-        <img
-          class="w-full"
-          src="../components/icons/projet_benevolaction.png"
-          alt="Project 6"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Bénévolaction</div>
-          <p class="text-gray-700 text-base">
-            Benevolaction est un site qui a pour but de trouver une association
-            pour chaque bénévole.
-          </p>
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2"
-            >#E-commerce</span
-          >
-        </div>
-        <div class="absolute bottom-0 right-0 mb-4 mr-4">
-          <RouterLink
-            to="sml"
-            class="text-blue-500 flex items-center hover:text-slate-900"
-          >
-            <span>En savoir plus</span>
-          </RouterLink>
-        </div>
-      </div>
+      <card
+        v-for="(card, index) in cards"
+        :key="index"
+        :title="card.title"
+        :description="card.description"
+        :tags="card.tags"
+        :image="card.image"
+        :link="card.link"
+      />
     </div>
   </div>
 

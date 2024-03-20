@@ -5,7 +5,7 @@ const cards = [
     title: "Share my loc",
     description:
       "Share my Loc est une application web révolutionnaire qui vous permet de retrouver facilement amis.",
-    image: "src/components/icons/projet_sml.png",
+    image: "projet_sml.png",
     tags: "#Web",
     link: "sml",
   },
@@ -13,7 +13,7 @@ const cards = [
     title: "Cinéphoria",
     description:
       "Cinéphoria est la plateforme de streaming idéal pour tout les amateurs de film et de série.",
-    image: "src/components/icons/projet_cinephoria.png",
+    image: "projet_cinephoria.png",
     tags: "#Mobile",
     link: "cinephoria",
   },
@@ -21,7 +21,7 @@ const cards = [
     title: "Handball league",
     description:
       "Handball-League est un site qui recense les équipes et joueurs du championnat de France de handball.",
-    image: "src/components/icons/projet_handball.png",
+    image: "projet_handball.png",
     tags: "#Design",
     link: "handball",
   },
@@ -29,7 +29,7 @@ const cards = [
     title: "Pinot",
     description:
       "Pinot est un site de montre de Luxe dans lequel l'utilisateur peut personnaliser sa montre.",
-    image: "src/components/icons/projet_pinot.png",
+    image: "projet_pinot.png",
     tags: "#UI/UX",
     link: "pinot",
   },
@@ -37,7 +37,7 @@ const cards = [
     title: "La Canopée",
     description:
       "La Canopée est un chalet de montagne qui souhaitait avoir un logo en rapport avec ses valeurs.",
-    image: "src/components/icons/projet_canopee.png",
+    image: "projet_canopee.png",
     tags: "#Marketing",
     link: "canopee",
   },
@@ -45,7 +45,7 @@ const cards = [
     title: "Edenio",
     description:
       "Edenio est une application web qui vise à créer des recettes et des régimes alimentaires.",
-    image: "src/components/icons/projet_edenio.png",
+    image: "projet_edenio.png",
     tags: "#E-commerce",
     link: "edenio",
   },
@@ -53,7 +53,7 @@ const cards = [
     title: "Bénévolaction",
     description:
       "Benevolaction est un site qui a pour but de trouver une association pour chaque bénévole.",
-    image: "src/components/icons/projet_benevolaction.png",
+    image: "projet_benevolaction.png",
     tags: "#E-commerce",
     link: "benevolaction",
   },
@@ -355,7 +355,7 @@ const submitForm = async () => {
           class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
         />
       </div>
-
+ 
       <div class="mb-6">
         <label
           for="message"

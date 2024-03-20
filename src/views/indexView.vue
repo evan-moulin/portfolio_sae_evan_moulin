@@ -117,6 +117,7 @@ const submitForm = async () => {
     console.error("Erreur lors de l'envoi du message:", error);
   }
 };
+
 </script>
 
 <template>

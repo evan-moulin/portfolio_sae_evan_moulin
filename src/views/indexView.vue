@@ -72,7 +72,7 @@ const Competence = [
   {
     title: "Design",
     description:
-      "En design, j'ai appris à maîtriser les logiciels de design tel que Figma, Illustrator et Photoshop.",
+      "Pendant mes études, en design, j'ai appris à maîtriser les logiciels de design tel que Figma, Illustrator et Photoshop.",
     image: "pinceau.svg",
     bgColor: "bg-rose-500",
     iconColor: "white",
@@ -206,7 +206,7 @@ const submitForm = async () => {
         <!-- Contenu texte sur la droite -->
         <div class="text-center md:text-left md:mx-auto">
           <h1
-            class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4"
+            class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4 hover: transition duration-300 ease-in-out transform hover:scale-105"
           >
             ABOUT
           </h1>
@@ -261,10 +261,14 @@ const submitForm = async () => {
 
   <div id="portfolio" class="container mx-auto py-8 bg-gray-100">
     <h2
-      class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4"
+      class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4 text-center hover: transition duration-300 ease-in-out transform hover:scale-105"
     >
       Projets
     </h2>
+    <p class="text-center text-xl mt-10 mb-7">
+      Dans cette catégorie, vous trouverez une sélection de mes projets réalisés
+      par mes soins.
+    </p>
 
     <div class="flex flex-wrap justify-center">
       <CardProjet

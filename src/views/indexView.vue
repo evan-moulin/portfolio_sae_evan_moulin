@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import card from "@/components/card.vue";
+import CardProjet from "@/components/CardProjet.vue";
 const cards = [
   {
     title: "Share my loc",
@@ -117,7 +117,6 @@ const submitForm = async () => {
     console.error("Erreur lors de l'envoi du message:", error);
   }
 };
-
 </script>
 
 <template>
@@ -183,29 +182,42 @@ const submitForm = async () => {
 
         <!-- Contenu texte sur la droite -->
         <div class="text-center md:text-left md:mx-auto">
-  <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4">
-    ABOUT
-  </h1>
-  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-    Je suis Evan Moulin, un passionné de design. Actuellement étudiant, mon objectif est de créer des designs élégants, fonctionnels et innovants qui captivent et inspirent.
-  </p>
-  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-    Je me spécialise actuellement dans le design graphique, et j'ai pour but de devenir un designer complet pour une grande entreprise.
-  </p>
-  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-    Je m'efforce continuellement de repousser les limites de la créativité et de l'innovation, tout en restant à l'écoute des besoins et des aspirations de mes clients.
-  </p>
-  <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-4">
-    N'hésitez pas à me contacter pour discuter de votre prochain projet de design!
-  </p>
-  <div class="flex justify-center md:justify-start"> <!-- Modification de cette ligne -->
-    <a href="src/components/icons/CV_pro_evan_moulin.pdf" download class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-      Télécharger CV
-    </a>
-  </div>
-</div>
-</div>  
-</div>
+          <h1
+            class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4"
+          >
+            ABOUT
+          </h1>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
+            Je suis Evan Moulin, un passionné de design. Actuellement étudiant,
+            mon objectif est de créer des designs élégants, fonctionnels et
+            innovants qui captivent et inspirent.
+          </p>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
+            Je me spécialise actuellement dans le design graphique, et j'ai pour
+            but de devenir un designer complet pour une grande entreprise.
+          </p>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
+            Je m'efforce continuellement de repousser les limites de la
+            créativité et de l'innovation, tout en restant à l'écoute des
+            besoins et des aspirations de mes clients.
+          </p>
+          <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-4">
+            N'hésitez pas à me contacter pour discuter de votre prochain projet
+            de design!
+          </p>
+          <div class="flex justify-center md:justify-start">
+            <!-- Modification de cette ligne -->
+            <a
+              href="src/components/icons/CV_pro_evan_moulin.pdf"
+              download
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Télécharger CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <h1 class="text-xl md:text-4xl ml-8 mt-12 font-bold text-zinc-950 mb-4">
       Mes compétences
@@ -303,15 +315,16 @@ const submitForm = async () => {
       Projets
     </h2>
 
-    <div class="flex flex-wrap justify-center">
-      <card
-        v-for="(card, index) in cards"
+    <div
+      class="flex flex-wrap justify-center"
+    >
+      <CardProjet v-for="(uneCard, index) in cards"
         :key="index"
-        :title="card.title"
-        :description="card.description"
-        :tags="card.tags"
-        :image="card.image"
-        :link="card.link"
+        :title="uneCard.title"
+        :description="uneCard.description"
+        :tags="uneCard.tags"
+        :image="uneCard.image"
+        :link="uneCard.link"
       />
     </div>
   </div>
@@ -355,7 +368,7 @@ const submitForm = async () => {
           class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
         />
       </div>
- 
+
       <div class="mb-6">
         <label
           for="message"

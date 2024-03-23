@@ -1,5 +1,5 @@
 <template>
-  <div class=" mx-auto px-4 py-8">
+  <div class="mx-auto px-4 py-8">
     <!-- Titre du projet -->
     <h1 class="text-5xl pt-20 font-bold mb-8">Cinéphoria</h1>
 
@@ -81,7 +81,7 @@
         <!-- Image 4 -->
         <div>
           <img
-            src="../components/icons/communauté_cine.png"
+            src="/public/Communaute_cine.png"
             alt="Image 4"
             class="w-full h-auto rounded-lg shadow-lg"
           />

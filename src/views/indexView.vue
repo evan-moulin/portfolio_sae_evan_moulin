@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const texts = [
   "Bienvenue sur mon portfolio",
   "Je m'appelle Evan Moulin",
-  "Et je suis Web Designer",
+  "Et je suis web designer",
 ];
 
 let index = 0;
@@ -165,7 +165,7 @@ const submitForm = async () => {
         @click="scrollToSection('about')"
         class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200"
       >
-        Découvrir mon parcours
+        Découvrez mon parcours
       </button>
     </div>
     <!-- Ajout des icônes sur le côté droit -->
@@ -215,9 +215,7 @@ const submitForm = async () => {
             ABOUT
           </h1>
           <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-            Je suis Evan Moulin, un passionné de design. Actuellement étudiant,
-            mon objectif est de créer des designs élégants, fonctionnels et
-            innovants qui captivent et inspirent.
+           Je suis Evan Moulin, un passionné de design. Actuellement étudiant, mon objectif est de créer des designs élégants, fonctionnels et innovants qui captivent et inspirent.
           </p>
           <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
             Je me spécialise actuellement dans le design graphique, et j'ai pour

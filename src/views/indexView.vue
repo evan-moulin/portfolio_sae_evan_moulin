@@ -94,10 +94,6 @@ const scrollToSection = (sectionId) => {
     element.scrollIntoView({ behavior: "smooth" });
   }
 };
-document.addEventListener("DOMContentLoaded", function () {
-  switchText(); // Appeler la fonction switchText dès que le contenu de la page est chargé
-});
-
 const texts = [
   "Bienvenue sur mon portfolio",
   "Je m'appelle Evan Moulin",
@@ -108,14 +104,22 @@ let index = 0;
 
 function switchText() {
   const textElement = document.getElementById("textSwitcher");
-  textElement.classList.add("fade-out");
-  setTimeout(() => {
-    textElement.textContent = texts[index];
-    index = (index + 1) % texts.length;
-    textElement.classList.remove("fade-out");
-  }, 500); // Durée de la transition
+  if (textElement) {
+    textElement.classList.add("fade-out");
+    setTimeout(() => {
+      textElement.textContent = texts[index];
+      index = (index + 1) % texts.length;
+      textElement.classList.remove("fade-out");
+    }, 500); // Durée de la transition
+  }
 }
 
+// Appeler la fonction switchText dès que le contenu de la page est chargé
+document.addEventListener("DOMContentLoaded", function () {
+  switchText(); 
+});
+
+// Appeler switchText() toutes les 3 secondes
 setInterval(switchText, 3000);
 
 import { ref } from "vue";
@@ -123,6 +127,29 @@ import { ref } from "vue";
 const email = ref("");
 const object = ref("");
 const message = ref("");
+
+const submitForm = async () => {
+  const formData = new FormData();
+  formData.append("email", email.value);
+  formData.append("object", object.value);
+  formData.append("message", message.value);
+
+  try {
+    const response = await fetch("envoyer.php", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json(); // if you expect JSON response
+    console.log(data);
+  } catch (error) {
+    console.error("There was a problem with the fetch operation: ", error);
+  }
+};
 
 </script>
 
@@ -193,7 +220,9 @@ const message = ref("");
             ABOUT
           </h1>
           <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
-           Je suis Evan Moulin, un passionné de design. Actuellement étudiant, mon objectif est de créer des designs élégants, fonctionnels et innovants qui captivent et inspirent.
+            Je suis Evan Moulin, un passionné de design. Actuellement étudiant,
+            mon objectif est de créer des designs élégants, fonctionnels et
+            innovants qui captivent et inspirent.
           </p>
           <p class="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
             Je me spécialise actuellement dans le design graphique, et j'ai pour

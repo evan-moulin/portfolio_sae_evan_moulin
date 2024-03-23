@@ -5,7 +5,7 @@ import BenevolactionView from '@/views/BenevolactionView.vue'
 import CinephoriaView from '@/views/CinephoriaView.vue'
 import CanopeeView from '@/views/CanopeeView.vue'
 import EdenioView from '@/views/EdenioView.vue'
-import pinotView from '@/views/pinotView.vue'
+  import pinotView from '@/views/PinotView.vue'
 import HandballView from '@/views/HandballView.vue'
 
 

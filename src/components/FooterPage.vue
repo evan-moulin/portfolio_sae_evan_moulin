@@ -24,10 +24,10 @@ const scrollToSection = (sectionId) => {
     >
       <!-- Informations de contact -->
       <div class="mb-4 md:mb-0 text-center md:text-left">
-        <h2 class="text-white text-lg font-semibold mb-2">Contactez-nous</h2>
-        <p class="text-gray-400">123 Rue de la Rue</p>
-        <p class="text-gray-400">Ville, Pays</p>
-        <p class="text-gray-400">contact@example.com</p>
+        <h2 class="text-white text-lg font-semibold mb-2">Contactez moi</h2>
+        <p class="text-gray-400">101 Ter Grande rue</p>
+        <p class="text-gray-400">Bavans, France</p>
+        <p class="text-gray-400">evanmoulin25@gmail.com</p>
       </div>
 
       <!-- Liens de navigation -->

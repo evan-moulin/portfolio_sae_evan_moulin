@@ -7,7 +7,7 @@ const cards = [
     description:
       "Share my Loc est une application web révolutionnaire qui vous permet de retrouver facilement amis.",
     image: "projet_sml.png",
-    tags: "#Web",
+    tags: "#Mobile #UI/UX",
     link: "sml",
   },
   {
@@ -15,7 +15,7 @@ const cards = [
     description:
       "Cinéphoria est la plateforme de streaming idéal pour tout les amateurs de film et de série.",
     image: "projet_cinephoria.png",
-    tags: "#Mobile",
+    tags: "#UI/UX #Design",
     link: "cinephoria",
   },
   {
@@ -23,7 +23,7 @@ const cards = [
     description:
       "Handball-League est un site qui recense les équipes et joueurs du championnat de France de handball.",
     image: "projet_handball.png",
-    tags: "#Design",
+    tags: "#Design #UI/UX",
     link: "handball",
   },
   {
@@ -39,7 +39,7 @@ const cards = [
     description:
       "La Canopée est un chalet de montagne qui souhaitait avoir un logo en rapport avec ses valeurs.",
     image: "projet_canopee.png",
-    tags: "#Marketing",
+    tags: "#Design #Illustrator",
     link: "canopee",
   },
   {
@@ -47,7 +47,7 @@ const cards = [
     description:
       "Edenio est une application web qui vise à créer des recettes et des régimes alimentaires.",
     image: "projet_edenio.png",
-    tags: "#E-commerce",
+    tags: "#E-commerce #UI/UX",
     link: "edenio",
   },
   {
@@ -55,7 +55,7 @@ const cards = [
     description:
       "Benevolaction est un site qui a pour but de trouver une association pour chaque bénévole.",
     image: "projet_benevolaction.png",
-    tags: "#E-commerce",
+    tags: "#UI/UX #Design",
     link: "benevolaction",
   },
 ];
@@ -94,7 +94,15 @@ const scrollToSection = (sectionId) => {
     element.scrollIntoView({ behavior: "smooth" });
   }
 };
-const texts = ["Je suis Web Designer", "Bienvenue sur mon portfolio"];
+document.addEventListener("DOMContentLoaded", function () {
+  switchText(); // Appeler la fonction switchText dès que le contenu de la page est chargé
+});
+
+const texts = [
+  "Bienvenue sur mon portfolio",
+  "Je m'appelle Evan Moulin",
+  "Et je suis Web Designer",
+];
 
 let index = 0;
 
@@ -128,16 +136,14 @@ const submitForm = async () => {
       body: formData,
     });
 
-    if (response.ok) {
-      alert("Message envoyé avec succès !");
-      email.value = "";
-      object.value = "";
-      message.value = "";
-    } else {
-      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+
+    const data = await response.json(); // if you expect JSON response
+    console.log(data);
   } catch (error) {
-    console.error("Erreur lors de l'envoi du message:", error);
+    console.error("There was a problem with the fetch operation: ", error);
   }
 };
 </script>
@@ -150,10 +156,8 @@ const submitForm = async () => {
     class="h-screen flex flex-col items-center justify-center bg-zinc-950 text-white relative"
   >
     <div class="text-center">
-      <h1 class="text-7xl font-bold" id="textSwitcher">
-        Bonjour, je m'appelle Evan Moulin
-      </h1>
-      <p class="mt-4 text-xl">Développeur Web passionné</p>
+      <h1 class="text-7xl font-bold" id="textSwitcher"></h1>
+      <p class="mt-4 text-xl">Designer web passionné</p>
     </div>
     <!-- Ajout d'une marge supérieure pour faire descendre le bouton -->
     <div class="mt-16">
@@ -197,7 +201,7 @@ const submitForm = async () => {
         <!-- Image à gauche -->
         <div class="text-center md:text-left">
           <img
-            src="../components/icons/pinot_1.png"
+            src="../components/icons/photo_cv.png"
             alt="Image About"
             class="w-full md:max-w-md rounded-lg shadow-md mx-auto md:ml-0 animate-float"
           />
@@ -259,7 +263,7 @@ const submitForm = async () => {
     </div>
   </section>
 
-  <div id="portfolio" class="container mx-auto py-8 bg-gray-100">
+  <section id="portfolio" class="mx-auto py-8 bg-gray-100">
     <h2
       class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4 text-center hover: transition duration-300 ease-in-out transform hover:scale-105"
     >
@@ -281,110 +285,74 @@ const submitForm = async () => {
         :link="uneCard.link"
       />
     </div>
-  </div>
+  </section>
 
-  <div
-    id="contact"
-    class="max-w-md mx-auto mt-8 rounded-lg overflow-hidden shadow-lg"
-  >
-    <form
-      @submit.prevent="submitForm"
-      class="max-w-md mx-auto mt-8 p-8 rounded-lg shadow-lg"
+  <section id="contact" class="bg-gray-100">
+    <h2
+      class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4 ml-10 hover: transition duration-300 ease-in-out transform"
     >
-      <div class="mb-6">
-        <label
-          for="email"
-          class="block text-sm font-semibold text-gray-700 mb-2"
-          >Adresse Email:</label
-        >
-        <input
-          type="email"
-          id="email"
-          v-model="email"
-          required
-          placeholder="Entrez votre adresse email"
-          class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
-        />
-      </div>
+      Contact
+    </h2>
+    <div class="max-w-4xl mx-auto mt-8 px-4">
+      <div class="rounded-lg overflow-hidden shadow-lg">
+        <form @submit.prevent="submitForm" class="p-8 shadow">
+          <div class="mb-6">
+            <label
+              for="email"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+              >Adresse Email:</label
+            >
+            <input
+              type="email"
+              id="email"
+              v-model="email"
+              required
+              placeholder="Entrez votre adresse email"
+              class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
+            />
+          </div>
 
-      <div class="mb-6">
-        <label
-          for="object"
-          class="block text-sm font-semibold text-gray-700 mb-2"
-          >Objet:</label
-        >
-        <input
-          type="text"
-          id="object"
-          v-model="object"
-          required
-          placeholder="Sujet de votre message"
-          class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
-        />
-      </div>
+          <div class="mb-6">
+            <label
+              for="object"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+              >Objet:</label
+            >
+            <input
+              type="text"
+              id="object"
+              v-model="object"
+              required
+              placeholder="Sujet de votre message"
+              class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
+            />
+          </div>
 
-      <div class="mb-6">
-        <label
-          for="message"
-          class="block text-sm font-semibold text-gray-700 mb-2"
-          >Message:</label
-        >
-        <textarea
-          id="message"
-          v-model="message"
-          required
-          placeholder="Votre message ici"
-          class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
-        ></textarea>
-      </div>
+          <div class="mb-6">
+            <label
+              for="message"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+              >Message:</label
+            >
+            <textarea
+              id="message"
+              v-model="message"
+              required
+              placeholder="Votre message ici"
+              class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105"
+            ></textarea>
+          </div>
 
-      <div class="flex justify-center">
-        <button
-          type="submit"
-          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
-        >
-          Envoyer
-        </button>
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+            >
+              Envoyer
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
+    </div>
+  </section>
 </template>
-
-<style>
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-9px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-float-competence {
-  animation: float 3s ease-in-out infinite;
-}
-
-.card-container .card {
-  transition: transform 0.3s ease-in-out;
-}
-
-.card-container .card:hover {
-  transform: translateY(-5px);
-}
-
-#textSwitcher {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-#textSwitcher.fade-out {
-  opacity: 0;
-}
-</style>

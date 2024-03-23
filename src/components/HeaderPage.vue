@@ -21,8 +21,7 @@ const scrollToSection = (sectionId) => {
   <header class="bg-zinc-950 py-4 p-4 fixed w-full z-10">
     <div class="container mx-auto">
       <div class="flex items-center justify-between">
-        <h1 class="text-white text-2xl font-bold">EvanMoulin</h1>
-        <img src="" alt="" />
+        <a class="text-white text-2xl font-bold" href="/">EvanMoulin</a>
         <button
           @click="toggleMobileMenu"
           class="text-white focus:outline-none md:hidden mr-2"
@@ -82,23 +81,42 @@ const scrollToSection = (sectionId) => {
     </div>
     <!-- Mobile Menu -->
     <div v-if="isMobileMenuOpen" class="md:hidden">
-  <nav class="bg-zinc-950 px-4 pt-2 pb-4 rounded-lg shadow-lg">
-    <ul class="flex flex-col space-y-2">
-      <li>
-        <button @click="scrollToSection('home')" class="text-white font-semibold py-2 px-4 rounded-lg">Home</button>
-      </li>
-      <li>
-        <button @click="scrollToSection('about')" class="text-white font-semibold py-2 px-4 rounded-lg">About</button>
-      </li>
-      <li>
-        <button @click="scrollToSection('portfolio')" class="text-white font-semibold py-2 px-4 rounded-lg">Projects</button>
-      </li>
-      <li>
-        <button @click="scrollToSection('contact')" class="text-white font-semibold py-2 px-4 rounded-lg">Contact</button>
-      </li>
-    </ul>
-  </nav>
-</div>
-
+      <nav class="bg-zinc-950 px-4 pt-2 pb-4 rounded-lg shadow-lg">
+        <ul class="flex flex-col space-y-2">
+          <li>
+            <button
+              @click="scrollToSection('home')"
+              class="text-white font-semibold py-2 px-4 rounded-lg"
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              @click="scrollToSection('about')"
+              class="text-white font-semibold py-2 px-4 rounded-lg"
+            >
+              About
+            </button>
+          </li>
+          <li>
+            <button
+              @click="scrollToSection('portfolio')"
+              class="text-white font-semibold py-2 px-4 rounded-lg"
+            >
+              Projects
+            </button>
+          </li>
+          <li>
+            <button
+              @click="scrollToSection('contact')"
+              class="text-white font-semibold py-2 px-4 rounded-lg"
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 </template>

@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-9px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-competence {
+  animation: float 3s ease-in-out infinite;
+}
+
+.card-container .card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-container .card:hover {
+  transform: translateY(-5px);
+}
+
+#textSwitcher {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#textSwitcher.fade-out {
+  opacity: 0;
+}

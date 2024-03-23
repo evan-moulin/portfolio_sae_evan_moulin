@@ -124,28 +124,6 @@ const email = ref("");
 const object = ref("");
 const message = ref("");
 
-const submitForm = async () => {
-  const formData = new FormData();
-  formData.append("email", email.value);
-  formData.append("object", object.value);
-  formData.append("message", message.value);
-
-  try {
-    const response = await fetch("envoyer.php", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json(); // if you expect JSON response
-    console.log(data);
-  } catch (error) {
-    console.error("There was a problem with the fetch operation: ", error);
-  }
-};
 </script>
 
 <template>

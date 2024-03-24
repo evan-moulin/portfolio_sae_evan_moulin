@@ -73,7 +73,10 @@ const scrollToSection = (sectionId) => {
         <h2 class="text-white text-lg font-semibold mb-2">Suivez-moi</h2>
         <div class="flex items-center justify-center md:justify-end space-x-4">
           <!-- LinkedIn -->
-          <a href="#" class="text-gray-300 hover:text-white">
+          <a
+            href="https://www.linkedin.com/in/evan-moulin-501616256/"
+            class="text-gray-300 hover:text-white"
+          >
             <svg
               width="22"
               height="22"
@@ -89,7 +92,10 @@ const scrollToSection = (sectionId) => {
           </a>
 
           <!-- GitHub -->
-          <a href="#" class="text-gray-300 hover:text-white">
+          <a
+            href="https://github.com/evan-moulin"
+            class="text-gray-300 hover:text-white"
+          >
             <svg
               width="24"
               height="24"
@@ -105,7 +111,10 @@ const scrollToSection = (sectionId) => {
           </a>
 
           <!-- Behance -->
-          <a href="#" class="text-gray-300 hover:text-white">
+          <a
+            href="https://www.behance.net/evanmoulin"
+            class="text-gray-300 hover:text-white"
+          >
             <svg
               width="22"
               height="22"

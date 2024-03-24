@@ -116,7 +116,7 @@ function switchText() {
 
 // Appeler la fonction switchText dès que le contenu de la page est chargé
 document.addEventListener("DOMContentLoaded", function () {
-  switchText(); 
+  switchText();
 });
 
 // Appeler switchText() toutes les 3 secondes
@@ -150,7 +150,6 @@ const submitForm = async () => {
     console.error("There was a problem with the fetch operation: ", error);
   }
 };
-
 </script>
 
 <template>
@@ -175,25 +174,25 @@ const submitForm = async () => {
     </div>
     <!-- Ajout des icônes sur le côté droit -->
     <div class="absolute bottom-0 right-0 mb-4 mr-4 flex flex-row items-center">
-      <a href=""
+      <a href="https://www.instagram.com/evan_mln"
         ><img
           src="../components/icons/instagram.svg"
           alt="Logo insta"
           class="mr-4"
       /></a>
-      <a href=""
+      <a href="https://www.linkedin.com/in/evan-moulin-501616256/"
         ><img
           src="../components/icons/linkedin.svg"
           alt="Logo linkedin"
           class="mr-4"
       /></a>
-      <a href=""
+      <a href="https://github.com/evan-moulin"
         ><img
           src="../components/icons/github.svg"
           alt="Logo github"
           class="mr-4"
       /></a>
-      <a href=""
+      <a href="https://www.behance.net/evanmoulin"
         ><img src="../components/icons/behance.svg" alt=" Logo behance"
       /></a>
     </div>

@@ -175,12 +175,6 @@ const submitForm = async () => {
     </div>
     <!-- Ajout des icônes sur le côté droit -->
     <div class="absolute bottom-0 right-0 mb-4 mr-4 flex flex-row items-center">
-      <a href="https://www.instagram.com/evan_mln"
-        ><img
-          src="../components/icons/instagram.svg"
-          alt="Logo insta"
-          class="mr-4"
-      /></a>
       <a href="https://www.linkedin.com/in/evan-moulin-501616256/"
         ><img
           src="../components/icons/linkedin.svg"

@@ -12,7 +12,7 @@ const { title, description, image, tags, link } = defineProps<{
 
 
 <template>
-  <div class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
+  <RouterLink :to="link" class="max-w-xs rounded overflow-hidden shadow-lg m-4 relative">
     <img class="w-full" :src="image" alt="Project 1" />
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">{{ title }}</div>
@@ -30,5 +30,5 @@ const { title, description, image, tags, link } = defineProps<{
     >
       <span>En savoir plus</span>
     </RouterLink>
-  </div>
+  </RouterLink>
 </template>

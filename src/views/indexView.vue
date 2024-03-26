@@ -128,6 +128,7 @@ const email = ref("");
 const object = ref("");
 const message = ref("");
 
+// @ts-ignore
 const submitForm = async () => {
   const formData = new FormData();
   formData.append("email", email.value);
@@ -278,7 +279,7 @@ const submitForm = async () => {
       par mes soins.
     </p>
 
-    <div class="flex flex-wrap justify-center">
+    <div class="flex flex-wrap justify-center mb-10">
       <CardProjet
         v-for="(uneCard, index) in cards"
         :key="index"
@@ -293,10 +294,13 @@ const submitForm = async () => {
 
   <section id="contact" class="bg-gray-100">
     <h2
-      class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4 ml-10 hover: transition duration-300 ease-in-out transform"
+      class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-zinc-950 mb-4 text-center hover: transition duration-300 ease-in-out transform hover:scale-105"
     >
       Contact
     </h2>
+    <p class="text-center text-xl mt-10 mb-7">
+      N'hésitez pas à me contacter pour toute question ou demande d'information.
+    </p>
     <div class="max-w-4xl mx-auto mt-8 px-4">
       <div class="rounded-lg overflow-hidden shadow-lg">
         <form @submit.prevent="submitForm" class="p-8 shadow">

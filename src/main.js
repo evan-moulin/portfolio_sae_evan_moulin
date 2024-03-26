@@ -10,4 +10,8 @@ app.use(router)
 
 app.mount('#app')
 
+//faire apparaitre la page depuis le haut
 
+router.afterEach((to, from) => {
+    window.scrollTo(0, 0);
+});
